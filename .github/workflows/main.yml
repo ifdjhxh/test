@@ -16,7 +16,12 @@ jobs:
       with:
         python-version: '3.x'
 
-    
+    - name: Build Docker image
+      run: |
+        DOCKERFILE_PATH=$(find -type f -name Dockerfile)
+        docker build -t prog:latest -f $DOCKERFILE_PATH .
+        
+    - name: Test with Docker
+      run: docker run prog
 
-    - name: Test with Python
-      run: pytest
+    
