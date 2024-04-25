@@ -18,7 +18,7 @@ jobs:
 
     - name: Install test dependencies
       run:  |
-        python -m pip install --upgrade pip 
+        python -m pip install --upgrade pip setuptools
         pip install -r dir/src/requirements.txt
 
     - name: Build Docker image
