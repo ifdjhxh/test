@@ -1,6 +1,6 @@
 import random
 
-from src.task_condition_templates.visitors import ListVisitor, DictVisitor
+from task_condition_templates.visitors import ListVisitor, DictVisitor
 
 
 class AdditionalTask:
@@ -12,7 +12,7 @@ class AdditionalTask:
         changer = ListVisitor()
         changer.visit(tree)
         if changer.count > 0:
-            file = open("C:/Users/Acer/PycharmProjects/mse1h2024-task-gen/src/task_condition_templates/lists.txt", "r",
+            file = open("task_condition_templates/lists.txt", "r",
                         encoding='utf-8')
             for line in file.readlines():
                 line = line.replace(r"\n", "\n")
@@ -21,13 +21,13 @@ class AdditionalTask:
         changer = DictVisitor()
         changer.visit(tree)
         if changer.count > 0:
-            file = open("C:/Users/Acer/PycharmProjects/mse1h2024-task-gen/src/task_condition_templates/dict.txt", "r",
+            file = open("../src/task_condition_templates/dict.txt", "r",
                         encoding='utf-8')
             for line in file.readlines():
                 line = line.replace(r"\n", "\n")
                 self.questions_pull.append(line.replace("[]", random.choice(changer.name)))
 
-        file = open("C:/Users/Acer/PycharmProjects/mse1h2024-task-gen/src/task_condition_templates/loops.txt", "r",
+        file = open("task_condition_templates/loops.txt", "r",
                     encoding='utf-8')
         for line in file.readlines():
             line = line.replace(r"\n", "\n")
