@@ -1,8 +1,8 @@
 FROM python:3.10
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p dir/src
+WORKDIR dir/src
 
-COPY . /usr/src/app
+COPY . dir/src
 
 CMD [ "python", "main.py" ]
